@@ -1,19 +1,36 @@
+import java.lang.invoke.SwitchPoint;
+import java.util.Calendar;
+
 public class Main {
 
     static void printLine(){
         System.out.println("--------------------------------");
     }
 
+    public static String getCategoria(String ano){
+        int currentYear = Calendar.getInstance().get(Calendar.YEAR);
+        int age = currentYear - Integer.parseInt(ano);
+
+        if (age <= 13)
+            return "ADOLESCENTE";
+        else if (age >= 17 && age <= 29)
+            return "JOVEM";
+        else if (age >= 30 && age <= 59)
+            return "ADULTO";
+        return "IDOSO";
+    }
+
     public static void main(String[] args) {
 
         // 4) Crie uma listagem de clientes utilizando variáveis primitivas
-        String[] nome = {"Fulano", "Sicrano"}, idade = {"1980", "2000"};
+        String[] nome = {"Fulano", "Sicrano"}, ano = {"1980", "2000"};
 
         System.out.println("Listagem dos Clientes");
         for (int i = 0; i < nome.length; i++){
             printLine();
             System.out.println("Nome: " + nome[i]);
-            System.out.println("Data de Nascimento: " + idade[i]);
+            System.out.println("Data de Nascimento: " + ano[i]);
+            System.out.println("Caracterísitca Etária: " + getCategoria(ano[i]));
         }
 
         printLine();
