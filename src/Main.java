@@ -3,8 +3,15 @@ import java.util.Calendar;
 
 public class Main {
 
+    static void printHeader(){
+        System.out.println("*".repeat(20));
+        System.out.println("Bem vindo ao Comex");
+        System.out.println("*".repeat(20));
+        System.out.println();
+    }
+
     static void printLine(){
-        System.out.println("--------------------------------");
+        System.out.println("-".repeat(20));
     }
 
     public static String getCategoria(String ano){
@@ -22,6 +29,8 @@ public class Main {
 
     public static void main(String[] args) {
 
+        printHeader();
+
         // 4) Crie uma listagem de clientes utilizando variáveis primitivas
         String[] nome = {"Fulano", "Sicrano"}, ano = {"1980", "2000"};
 
@@ -34,7 +43,8 @@ public class Main {
         }
 
         printLine();
-        printLine();
+        System.out.println();
+
 
         // 5) Crie uma listagem de produtos utilizando variáves primitivas
         String[] produtos = {"Livro", "Celular"};
